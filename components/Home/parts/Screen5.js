@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { FullPage } from 'styles/layouts';
 import {
   BlockText,

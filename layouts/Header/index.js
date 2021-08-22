@@ -1,10 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Header } from "styles/layouts";
-import { Flex } from "styles/components/Layouts";
-import Nav from "layouts/Header/components/Nav";
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Header } from 'styles/layouts';
+import { Flex } from 'styles/components/Layouts';
+import Nav from 'layouts/Header/components/Nav';
+
+import classes from './components/Nav.module.css';
 
 const View = () => {
+  const [menuActive, setMenuActive] = useState(false);
+
   return (
     <>
       <Header>
@@ -22,7 +27,20 @@ const View = () => {
             </a>
           </Link>
 
-          <Nav />
+          <div
+            onClick={() => setMenuActive(!menuActive)}
+            className={
+              menuActive
+                ? classes.hamburger + ' ' + classes.active
+                : classes.hamburger
+            }
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <Nav menuActive={menuActive} />
         </Flex>
       </Header>
     </>

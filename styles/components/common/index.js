@@ -6,6 +6,14 @@ export const setMargins = ({
   marginLeft,
   marginX,
   marginY,
+  padding,
+
+  marginSM,
+  marginTopSM,
+  marginRightSM,
+  marginBottomSM,
+  marginLeftSM,
+  paddingSM,
 }) => ({
   margin: margin,
   marginTop: marginTop,
@@ -14,4 +22,14 @@ export const setMargins = ({
   marginLeft: marginLeft,
   margin: marginX ? `0 ${marginX}` : null,
   margin: marginY ? `${marginY} 0` : null,
+  padding: padding,
+
+  '@media only screen and (max-width: 36em)': {
+    margin: marginSM,
+    marginTop: marginTopSM,
+    marginRight: marginRightSM,
+    marginBottom: marginBottomSM,
+    marginLeft: marginLeftSM,
+    padding: paddingSM,
+  },
 });

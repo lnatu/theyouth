@@ -26,12 +26,17 @@ export const Line = styled.div(({ bgColor, theme }) => ({
     top: '50%',
     transform: 'translate(-50%, -50%)',
   },
+
+  '@media only screen and (max-width: 36em)': {
+    maxWidth: '20rem',
+  },
 }));
 
 export const Box = styled.div(
   setMargins,
-  ({ bgColor, padding, rounded, width, height, theme, other }) => ({
+  ({ bgColor, border, padding, rounded, width, height, theme, other }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
+    border: border,
     borderRadius: rounded,
     padding: padding,
     width: width,

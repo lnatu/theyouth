@@ -1,38 +1,44 @@
-import Image from "next/image";
-import Link from "next/link";
-import classes from "./Nav.module.css";
+import Image from 'next/image';
+import Link from 'next/link';
+import classes from './Nav.module.css';
 
-const View = () => {
+const View = ({ menuActive }) => {
   const nav = [
     {
-      title: "About us",
-      route: "/about-us",
+      title: 'About us',
+      route: '/about-us',
     },
     {
-      title: "Client",
-      route: "/client",
+      title: 'Client',
+      route: '/client',
     },
     {
-      title: "Staff",
-      route: "/staff",
+      title: 'Staff',
+      route: '/staff',
     },
     {
-      title: "Contact",
-      route: "/contact",
+      title: 'Contact',
+      route: '/contact',
     },
   ];
 
   return (
-    <nav>
-      <ul className={classes["nav-list"]}>
+    <nav
+      className={menuActive ? classes.nav + ' ' + classes.active : classes.nav}
+    >
+      <ul className={classes['nav-list']}>
         {nav.map((item, i) => (
-          <li className={classes["nav-list__item"]} key={i}>
+          <li className={classes['nav-list__item']} key={i}>
             <Link href={item.route}>
-              <a className={classes["link-text"]}>{item.title}</a>
+              <a className={classes['link-text']}>{item.title}</a>
             </Link>
           </li>
         ))}
-        <li className={classes["nav-list__item"]}>
+        <li
+          className={
+            classes['nav-list__item'] + ' ' + classes['nav-list__item--flag']
+          }
+        >
           <Image
             src="/static/images/icons/flag-vi.svg"
             width={48}

@@ -10,6 +10,8 @@ export const Typo = styled.div(
     fontWeight,
     lineHeight,
     letterSpacing,
+    fontSizeSM,
+    lineHeightSM,
     theme,
   }) => ({
     color: theme.colors[color] || color,
@@ -18,5 +20,10 @@ export const Typo = styled.div(
     lineHeight: lineHeight,
     letterSpacing: letterSpacing,
     textAlign: align,
+
+    '@media only screen and (max-width: 36em)': {
+      fontSize: fontSizeSM,
+      lineHeight: lineHeightSM,
+    },
   })
 );

@@ -7,6 +7,21 @@ export const Container = styled.div(setMargins, ({ maxWidth, height }) => ({
   height: height,
   marginLeft: 'auto',
   marginRight: 'auto',
+
+  paddingLeft: '1.5rem',
+  paddingRight: '1.5rem',
+
+  '@media (min-width: 576px)': {
+    maxWidth: '540px',
+  },
+
+  '@media (min-width: 768px)': {
+    maxWidth: '720px',
+  },
+
+  '@media (min-width: 992px)': {
+    maxWidth: maxWidth,
+  },
 }));
 
 export const Overlay = styled.div`
@@ -29,8 +44,22 @@ export const Overlay = styled.div`
 
 export const Flex = styled.div(
   setMargins,
-  ({ bgColor, direction, wrap, items, content, width, height, theme }) => ({
+  ({
+    bgColor,
+    bgImage,
+    direction,
+    wrap,
+    items,
+    content,
+    width,
+    height,
+    overflow,
+    heightLG,
+    theme,
+  }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
+    backgroundImage: bgImage,
+    backgroundSize: 'cover',
     display: 'flex',
     flexDirection: direction,
     flexWrap: wrap || 'wrap',
@@ -39,6 +68,13 @@ export const Flex = styled.div(
 
     height: height,
     width: width,
+
+    position: 'relative',
+    overflow: overflow,
+
+    '@media only screen and (max-width: 62em)': {
+      height: heightLG,
+    },
   })
 );
 
@@ -53,30 +89,50 @@ export const BlockText = styled.div(({ color, align, maxWidth }) => ({
 export const Stack = styled.div(
   ({
     bgColor,
+    border,
+    rounded,
     position,
     top,
     right,
     bottom,
     left,
+    topSM,
+    rightSM,
+    bottomSM,
+    leftSM,
     level,
     width,
+    maxWidth,
     height,
     padding,
     theme,
   }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
+    border: border,
+    borderRadius: rounded,
 
     position: position || 'absolute',
     top: top,
     right: right,
     bottom: bottom,
     left: left,
+
     zIndex: level,
 
     width: width,
+    maxWidth: maxWidth,
     height: height,
 
     padding: padding,
+
+    wordBreak: 'break-all',
+
+    '@media only screen and (max-width: 36em)': {
+      top: topSM,
+      right: rightSM,
+      bottom: bottomSM,
+      left: leftSM,
+    },
   })
 );
 

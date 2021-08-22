@@ -1,29 +1,24 @@
-/* eslint-disable */
 import { FullPage } from 'styles/layouts';
-import {
-  BlockText,
-  Container,
-  Flex,
-  Stack,
-  StyledImage,
-} from 'styles/components/Layouts';
+import { Container, Flex, Stack, StyledImage } from 'styles/components/Layouts';
 import { Typo } from 'styles/components/Typo';
 import { Box, Line } from 'styles/components/Shape';
+import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => (
-  <FullPage>
+  <FullPage height="auto">
     <Flex
       bgColor="dark2"
       items="center"
       content="center"
-      width="100%"
-      height="100%"
+      padding="33.2rem 2rem"
+      paddingSM="20rem 2rem"
     >
       <Container maxWidth="117rem">
         <Typo
           as="p"
           align="center"
           fontSize="1.4rem"
+          fontSizeSM="1rem"
           lineHeight="1.68rem"
           marginBottom={10}
         >
@@ -40,8 +35,8 @@ const View = () => (
 
         <Line bgColor="warning" />
 
-        <Flex className="row g-4" marginTop="20rem">
-          <Box className="col-4">
+        <Flex className="row g-4" marginTop="20rem" marginTopSM="10rem">
+          <Box className="col-md-4">
             <Typo align="center">
               <StyledImage src="/static/images/screen-8-1.png" />
               <Typo
@@ -49,6 +44,7 @@ const View = () => (
                 color="#fff"
                 lineHeight="1.92rem"
                 fontSize="1.6rem"
+                fontSizeSM="1.5rem"
                 fontWeight="700"
                 marginTop="3rem"
               >
@@ -58,6 +54,7 @@ const View = () => (
                 as="p"
                 color="grey4"
                 fontSize="1.4rem"
+                fontSizeSM="1rem"
                 lineHeight="1.68rem"
                 letterSpacing="0.04em"
                 marginTop="1.5rem"
@@ -68,7 +65,8 @@ const View = () => (
               </Typo>
             </Typo>
           </Box>
-          <Box className="col-4">
+
+          <Box className="col-md-4" marginTopSM="10rem">
             <Typo align="center">
               <StyledImage src="/static/images/screen-8-1.png" />
               <Typo
@@ -76,6 +74,7 @@ const View = () => (
                 color="#fff"
                 lineHeight="1.92rem"
                 fontSize="1.6rem"
+                fontSizeSM="1.5rem"
                 fontWeight="700"
                 marginTop="3rem"
               >
@@ -85,6 +84,7 @@ const View = () => (
                 as="p"
                 color="grey4"
                 fontSize="1.4rem"
+                fontSizeSM="1rem"
                 lineHeight="1.68rem"
                 letterSpacing="0.04em"
                 marginTop="1.5rem"
@@ -95,7 +95,8 @@ const View = () => (
               </Typo>
             </Typo>
           </Box>
-          <Box className="col-4">
+
+          <Box className="col-md-4" marginTopSM="10rem">
             <Typo align="center">
               <StyledImage src="/static/images/screen-8-1.png" />
               <Typo
@@ -103,6 +104,7 @@ const View = () => (
                 color="#fff"
                 lineHeight="1.92rem"
                 fontSize="1.6rem"
+                fontSizeSM="1.5rem"
                 fontWeight="700"
                 marginTop="3rem"
               >
@@ -112,6 +114,7 @@ const View = () => (
                 as="p"
                 color="grey4"
                 fontSize="1.4rem"
+                fontSizeSM="1rem"
                 lineHeight="1.68rem"
                 letterSpacing="0.04em"
                 marginTop="1.5rem"
@@ -126,28 +129,7 @@ const View = () => (
       </Container>
     </Flex>
 
-    <Stack position="absolute" bottom={30} left={45} level={3}>
-      <Flex items="baseline">
-        <Typo
-          as="h3"
-          fontSize="9.6rem"
-          lineHeight="11.5rem"
-          fontWeight={700}
-          color="#fff"
-        >
-          08
-        </Typo>
-        <Typo
-          as="p"
-          fontSize="1.8rem"
-          lineHeight="2.16rem"
-          color="#fff"
-          marginLeft={5}
-        >
-          Why Digital Transformation Strategy
-        </Typo>
-      </Flex>
-    </Stack>
+    <PageIdent order="08" text="Why Digital Transformation Strategy" />
   </FullPage>
 );
 

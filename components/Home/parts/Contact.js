@@ -1,25 +1,29 @@
+import { useMediaQuery } from 'react-responsive';
 import { FullPage } from 'styles/layouts';
-import { Container, Flex, Stack, StyledImage } from 'styles/components/Layouts';
+import { Flex, Stack, StyledImage } from 'styles/components/Layouts';
 import { Button } from 'styles/components/Buttons';
 import { Input } from 'styles/components/Form';
 import { Typo } from 'styles/components/Typo';
 import { Box } from 'styles/components/Shape';
 
-const View = () => (
-  <FullPage>
-    <Container height="100%">
-      <Flex className="row g-0" height="100%">
+const View = () => {
+  const isLg = useMediaQuery({ query: '(min-width: 992px)' });
+
+  return (
+    <FullPage height="auto">
+      <Flex className="row g-0" height={isLg ? '100vh' : 'auto'}>
         <Box
-          className="col-6"
+          className="col-lg-6"
           height="100%"
           other={{
             position: 'relative',
             backgroundImage:
               'radial-gradient(66.44% 66.44% at 25.29% 0%, #414141 12.47%, #1C1C1C 100%)',
           }}
+          padding={isLg ? '0' : '20rem 0 10rem 0'}
         >
           <Flex width="100%" height="100%" items="center" justify="center">
-            <Box padding="0 8rem">
+            <Box padding="0 8rem" paddingSM="0 2rem">
               <Box>
                 <Typo
                   as="h5"
@@ -49,8 +53,8 @@ const View = () => (
 
                 <Box marginTop="4.5rem">
                   <form>
-                    <Flex class="row g-5">
-                      <Box class="col-6">
+                    <Flex className="row g-5">
+                      <Box className="col-md-6">
                         <Input
                           color="grey4"
                           fontSize="1.4rem"
@@ -58,7 +62,7 @@ const View = () => (
                           placeholder="Name"
                         />
                       </Box>
-                      <Box class="col-6">
+                      <Box className="col-md-6">
                         <Input
                           color="grey4"
                           fontSize="1.4rem"
@@ -66,7 +70,7 @@ const View = () => (
                           placeholder="Email"
                         />
                       </Box>
-                      <Box class="col-12">
+                      <Box className="col-12">
                         <Input
                           as="textarea"
                           color="grey4"
@@ -75,7 +79,7 @@ const View = () => (
                           height="220px"
                         />
                       </Box>
-                      <Box class="col-12">
+                      <Box className="col-12">
                         <Button
                           bgColor="warning"
                           color="#fff"
@@ -91,7 +95,7 @@ const View = () => (
                 </Box>
 
                 <Flex className="row" marginTop="10rem">
-                  <Box className="col-6">
+                  <Box className="col-lg-6">
                     <Flex items="center">
                       <StyledImage
                         src="/static/images/icons/map-pin.svg"
@@ -102,6 +106,7 @@ const View = () => (
                         fontSize="1.4rem"
                         lineHeight="1.68rem"
                         marginLeft="1rem"
+                        style={{ flex: 1 }}
                       >
                         373/226 Lý Thường Kiệt, P8, Q. Tân Bình, Tp.HCM
                       </Typo>
@@ -197,7 +202,7 @@ const View = () => (
                       </Typo>
                     </Flex>
                   </Box>
-                  <Box className="col-6">
+                  <Box className="col-lg-6" marginTop={isLg ? '0' : '10rem'}>
                     <StyledImage
                       src="/static/images/logo-footer.png"
                       alt="dts logo"
@@ -231,25 +236,32 @@ const View = () => (
             </Box>
           </Flex>
         </Box>
-        <Box className="col-6" height="100%" other={{ position: 'relative' }}>
-          <StyledImage
-            width="100%"
-            height="100%"
-            src="/static/images/home-banner-11.png"
-          />
 
-          <Stack
-            bgColor="rgba(12, 12, 12, 0.8)"
-            top={0}
-            left={0}
-            width="100%"
+        {isLg && (
+          <Box
+            className="col-lg-6"
             height="100%"
-            level={2}
-          />
-        </Box>
+            other={{ position: 'relative' }}
+          >
+            <StyledImage
+              width="100%"
+              height="100%"
+              src="/static/images/home-banner-11.png"
+            />
+
+            <Stack
+              bgColor="rgba(12, 12, 12, 0.8)"
+              top={0}
+              left={0}
+              width="100%"
+              height="100%"
+              level={2}
+            />
+          </Box>
+        )}
       </Flex>
-    </Container>
-  </FullPage>
-);
+    </FullPage>
+  );
+};
 
 export default View;

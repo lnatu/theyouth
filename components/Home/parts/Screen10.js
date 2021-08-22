@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useEffect, useState, useRef } from 'react';
 // import { TweenLite, Power3, TweenMax } from 'gsap';
 // import hoverEffect from 'hover-effect';

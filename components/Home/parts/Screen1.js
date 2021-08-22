@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Image from 'next/image';
 import { FullPage } from 'styles/layouts';
 import { BlockText, Flex, Overlay, Stack } from 'styles/components/Layouts';

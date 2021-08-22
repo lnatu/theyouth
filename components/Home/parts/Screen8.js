@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { FullPage } from 'styles/layouts';
 import { Container, Flex, Stack, StyledImage } from 'styles/components/Layouts';
 import { Typo } from 'styles/components/Typo';

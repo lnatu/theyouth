@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Link from 'next/link';
 import { FullPage } from 'styles/layouts';
 import { Container, Flex, StyledImage } from 'styles/components/Layouts';

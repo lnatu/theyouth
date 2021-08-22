@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useMediaQuery } from 'react-responsive';
 import { FullPage } from 'styles/layouts';
 import { Flex, Stack, StyledImage } from 'styles/components/Layouts';

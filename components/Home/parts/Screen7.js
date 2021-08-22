@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';

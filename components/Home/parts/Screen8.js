@@ -6,7 +6,7 @@ import { Box, Line } from 'styles/components/Shape';
 import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => (
-  <FullPage height="auto">
+  <FullPage className="screen" height="auto">
     <Flex
       bgColor="dark2"
       items="center"

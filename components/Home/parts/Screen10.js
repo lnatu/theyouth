@@ -27,7 +27,7 @@ const View = () => {
   const imageWidth = 0;
 
   return (
-    <FullPage>
+    <FullPage className="screen">
       <Stack className={classes['team-next']} level={5}>
         <StyledImage
           src="/static/images/icons/triangle-right.svg"

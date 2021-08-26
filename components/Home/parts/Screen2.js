@@ -25,7 +25,7 @@ const View = () => {
   };
 
   return (
-    <FullPage>
+    <FullPage className="screen">
       <Flex
         bgColor="dark2"
         items="center"

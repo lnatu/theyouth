@@ -8,7 +8,7 @@ import PageIdent from 'components/Home/components/PageIndent';
 import classes from 'components/Home/styles/Home.module.css';
 
 const View = () => (
-  <FullPage heightLG="auto">
+  <FullPage className="screen" heightLG="auto">
     <Flex
       bgImage="url(/static/images/home-banner-6.png)"
       width="100%"

@@ -30,7 +30,9 @@ const View = ({ menuActive }) => {
         {nav.map((item, i) => (
           <li className={classes['nav-list__item']} key={i}>
             <Link href={item.route}>
-              <a className={classes['link-text']}>{item.title}</a>
+              <a className={classes['link-text']} data-text={item.title}>
+                {item.title}
+              </a>
             </Link>
           </li>
         ))}

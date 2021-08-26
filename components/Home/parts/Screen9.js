@@ -19,7 +19,7 @@ const View = () => {
   };
 
   return (
-    <FullPage height="auto">
+    <FullPage className="screen" height="auto">
       <Flex
         bgColor="dark2"
         items="center"

@@ -12,7 +12,7 @@ import { Box } from 'styles/components/Shape';
 import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => (
-  <FullPage height="auto">
+  <FullPage className="screen" height="auto">
     <Flex className="row g-0">
       <Box className="col-lg-4" height="100vh" other={{ position: 'relative' }}>
         <StyledImage

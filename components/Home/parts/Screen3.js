@@ -49,7 +49,11 @@ const View = () => {
   ];
 
   return (
-    <FullPage height="auto" bgImage="url(/static/images/home-banner-3.png)">
+    <FullPage
+      className="screen"
+      height="auto"
+      bgImage="url(/static/images/home-banner-3.png)"
+    >
       <Flex
         items="center"
         content="center"

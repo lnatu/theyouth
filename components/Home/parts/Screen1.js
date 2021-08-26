@@ -6,7 +6,7 @@ import { Button } from 'styles/components/Buttons';
 import { Typo } from 'styles/components/Typo';
 
 const View = () => (
-  <FullPage>
+  <FullPage className="screen">
     <Overlay>
       <Flex
         items="center"

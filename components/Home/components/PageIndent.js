@@ -14,7 +14,8 @@ const View = ({ order, text }) => (
       <Typo
         as="h3"
         fontSize="9.6rem"
-        fontSizeSM="5rem"
+        fontSizeMD="5rem"
+        fontSizeSM="3rem"
         lineHeight="11.5rem"
         lineHeightSM="6rem"
         fontWeight={700}

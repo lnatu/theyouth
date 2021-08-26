@@ -14,6 +14,7 @@ import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => (
   <FullPage
+    className="screen"
     height="auto"
     bgImage="linear-gradient(0deg, rgba(0, 0, 0, 0.89), rgba(0, 0, 0, 0.89)), url(/static/images/home-banner-5.png)"
   >

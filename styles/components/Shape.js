@@ -56,7 +56,7 @@ export const CursorOutline = styled.div`
   transform: translate(-50%, -50%);
   transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
 
-  width: 5rem;
-  height: 5rem;
-  border: 2px solid #fff;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #fff;
 `;

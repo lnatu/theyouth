@@ -1,4 +1,9 @@
+
 /* eslint-disable */
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
@@ -7,33 +12,53 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 import { FullPage } from 'styles/layouts';
-import {
-  BlockText,
-  Container,
-  Flex,
-  Stack,
-  StyledImage,
-} from 'styles/components/Layouts';
+import { Container, Flex, StyledImage } from 'styles/components/Layouts';
 import { Typo } from 'styles/components/Typo';
-import { Box, Line } from 'styles/components/Shape';
+import { Box } from 'styles/components/Shape';
 import classes from 'components/Home/styles/Home.module.css';
 import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => {
-  const nextTes = () => {
-    document.querySelector('.swiper-button-next').click();
-  };
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.test',
+        scrub: 1,
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+
+    tl.to('.vision-slide', {
+      x: 400,
+      ease: 'power4.in',
+      duration: 1,
+    });
+
+    gsap.from('.vision-slide', {
+      scrollTrigger: {
+        trigger: '.test',
+      },
+      y: '150%',
+      ease: 'power4.out',
+      duration: 2,
+      delay: 0.5,
+    });
+  }, []);
 
   return (
     <FullPage className="screen">
       <Flex
+        className="test"
         bgColor="dark2"
         items="center"
         content="center"
         width="100%"
         height="100%"
       >
-        <Container maxWidth={1147} height={510}>
+        <Container className="overflow-hidden" maxWidth={1147} height={510}>
           <Flex items="center" height="100%">
             <Swiper
               className="vision-slide"

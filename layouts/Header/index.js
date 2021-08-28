@@ -17,6 +17,7 @@ const View = () => {
           <Link href="/">
             <a>
               <Image
+                className="slide-up-skew"
                 src="/static/images/logo.svg"
                 width={216}
                 height={63}
@@ -40,7 +41,7 @@ const View = () => {
             <span></span>
           </div>
 
-          <Nav menuActive={menuActive} />
+          <Nav menuActive={menuActive} setMenuActive={setMenuActive} />
         </Flex>
       </Header>
     </>

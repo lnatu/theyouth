@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState, useRef, useEffect } from 'react';
 import { CursorOutline } from 'styles/components/Shape';
 
@@ -147,8 +146,8 @@ const Cursor = () => {
    */
   const animateDotOutline = (time) => {
     if (previousTimeRef.current !== undefined) {
-      x += (endX - x) / 16;
-      y += (endY - y) / 16;
+      x += (endX - x) / 8;
+      y += (endY - y) / 8;
       cursorDotOutline.current.style.top = y + 'px';
       cursorDotOutline.current.style.left = x + 'px';
     }

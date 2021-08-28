@@ -1,4 +1,8 @@
 /* eslint-disable */
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
@@ -18,8 +22,67 @@ const View = () => {
     document.querySelector('.swiper-button-next').click();
   };
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const title = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.feedback',
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+
+    title.from('.feedback-title', {
+      duration: 2,
+      y: 200,
+      skewY: 20,
+      ease: 'power4.out',
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.feedback',
+        scrub: 1,
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+
+    tl.to('.feedback-slide', {
+      x: 400,
+      ease: 'power4.in',
+      duration: 1,
+    });
+
+    gsap.from('.feedback-slide', {
+      scrollTrigger: {
+        trigger: '.feedback',
+      },
+      y: '150%',
+      ease: 'power4.out',
+      duration: 2,
+      delay: 0.5,
+    });
+
+    gsap.from('.feedback-client-item', {
+      scrollTrigger: {
+        trigger: '.feedback',
+        start: '50% bottom',
+        end: 'bottom top',
+      },
+      y: '150%',
+      ease: 'power4.out',
+      duration: 2,
+      delay: 1,
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  }, []);
+
   return (
-    <FullPage className="screen" height="auto">
+    <FullPage className="screen feedback" height="auto">
       <Flex
         bgColor="dark2"
         items="center"
@@ -27,29 +90,32 @@ const View = () => {
         padding="20rem 2rem"
       >
         <Container maxWidth="117rem">
-          <Typo
-            as="p"
-            align="center"
-            fontSize="1.4rem"
-            lineHeight="1.68rem"
-            marginBottom={10}
-          >
-            <Typo as="span" color="warning">
-              Lorem Ipsum
-            </Typo>{' '}
-            <Typo as="span" color="grey3">
-              is simply dummy text of the printing and typesetting industry.
-            </Typo>{' '}
-            <Typo as="span" color="#fff">
-              Lorem Ipsum has been the industry's
+          <div class="overflow-hidden" style={{ paddingBottom: 5 }}>
+            <Typo
+              className="feedback-title"
+              as="p"
+              align="center"
+              fontSize="1.4rem"
+              lineHeight="1.68rem"
+              marginBottom={10}
+            >
+              <Typo as="span" color="warning">
+                Lorem Ipsum
+              </Typo>{' '}
+              <Typo as="span" color="grey3">
+                is simply dummy text of the printing and typesetting industry.
+              </Typo>{' '}
+              <Typo as="span" color="#fff">
+                Lorem Ipsum has been the industry's
+              </Typo>
             </Typo>
-          </Typo>
 
-          <Line bgColor="warning" />
+            <Line className="feedback-title" bgColor="warning" />
+          </div>
 
-          <Box other={{ position: 'relative' }}>
+          <Box className="overflow-hidden" other={{ position: 'relative' }}>
             <Swiper
-              className={classes.testimonial}
+              className={classes.testimonial + ' feedback-slide'}
               autoplay={{
                 delay: 5000,
                 disableOnInteraction: false,
@@ -140,11 +206,15 @@ const View = () => {
             <Flex style={{ margin: '-1.5rem' }}>
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
                 <Box
-                  className={classes['feedback-client']}
+                  className={classes['feedback-client'] + ' overflow-hidden'}
                   padding="1.5rem"
                   key={i}
                 >
-                  <Box bgColor="#fff" padding="2.5rem 0">
+                  <Box
+                    className="feedback-client-item"
+                    bgColor="#fff"
+                    padding="2.5rem 0"
+                  >
                     <Typo
                       as="p"
                       align="center"

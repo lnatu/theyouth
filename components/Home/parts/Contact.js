@@ -17,7 +17,7 @@ const View = () => {
   }, [isLg]);
 
   return (
-    <FullPage height="auto">
+    <FullPage className="contact" height="auto">
       <Flex className="row g-0" height={screen ? '100vh' : 'auto'}>
         <Box
           className="col-lg-6"
